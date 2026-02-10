@@ -1,0 +1,43 @@
+{
+  "gitlab": {
+    "base_url": "https://gitlab.com",
+    "namespace": "your-group",
+    "use_ssh": false,
+    "https_username": "",
+    "https_token": ""
+  },
+  "destination_root": "D:/workspace/partner",
+  "update_existing": true,
+  "parallel": {
+    "clone_max_workers": 4,
+    "build_max_workers": 2,
+    "throttle_ms": 250
+  },
+  "repos": [
+    {
+      "name": "partner-account",
+      "type": "backend",
+      "enable": true,
+      "path": "",
+      "clone_url": "",
+      "install_command": "mvn clean install",
+      "run_command": "",
+      "artifact_path": ""
+    },
+    {
+      "name": "partner-ui",
+      "type": "frontend",
+      "enable": true,
+      "path": "",
+      "clone_url": "",
+      "install_command": "npm i",
+      "run_command": "npm start"
+    }
+  ],
+  "nginx": {
+    "conf_path": "C:/nginx/conf/nginx.conf",
+    "replace_ip": "172.21.1.14",
+    "auto_restart": true,
+    "restart_command": "nginx -s reload"
+  }
+}
